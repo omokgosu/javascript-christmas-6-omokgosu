@@ -1,5 +1,9 @@
+import Day from "./model/Day.js";
+
 class App {
-  async run() {}
+  async run() {
+    const day = new Day();
+  }
 }
 
 export default App;
