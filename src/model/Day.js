@@ -1,7 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import { USER_INPUT } from "../constants/constants.js";
 
-import InputView from "../InputView.js";
+import InputView from "../view/InputView.js";
 import Validate from "../validate/Validate.js";
 
 class Day {
