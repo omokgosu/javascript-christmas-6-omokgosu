@@ -1,5 +1,12 @@
 import { Console } from "@woowacourse/mission-utils";
-import { COMMA, END_EVENT_DAY, ERROR_MESSAGE, HIGHPOON, MAX_MENU, START_EVENT_DAY, USER_INPUT } from "../constants/constants.js";
+import { 
+  USER_INPUT,
+  ERROR_MESSAGE,
+  COMMA,
+  HIGHPOON,
+  MAX_MENU,
+  ZERO
+} from "../constants/constants.js";
 
 import InputView from "../view/InputView.js";
 import { MENU } from "../constants/menu.js";
@@ -8,10 +15,10 @@ class Menu {
   #menu;
 
   constructor() {
-    this.#menu = this.#setMenu();
+  
   }
 
-  async #setMenu() {
+  async setMenu() {
     while (!this.#menu) {
       let menu = await InputView.getInputMenu(USER_INPUT.MENU);
       menu = this.#transMenu(menu);
@@ -36,6 +43,9 @@ class Menu {
   #menuValidate(menu) {
     const name = menu.map((menu) => menu[0]);
     const count = menu.map((menu) => menu[1]);
+
+    Console.print(name);
+    Console.print(count);
     
     this.#menuNameValidate(name);
     this.#menuCountValidate(count);
@@ -43,7 +53,7 @@ class Menu {
 
   #menuNameValidate(name) {
     name.forEach((name) => {
-      if (name in MENU) {
+      if (!(name in MENU)) {
         throw ERROR_MESSAGE.MENU;
       }
     })
@@ -53,7 +63,7 @@ class Menu {
     let sum = 0;
 
     count.forEach((number) => {
-      if (Number.isInteger(number) || number < START_EVENT_DAY || number > END_EVENT_DAY) {
+      if (!Number.isInteger(number) || number === ZERO) {
         throw ERROR_MESSAGE.MENU;
       }
 
