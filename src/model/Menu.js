@@ -1,4 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
+import { MENU } from "../constants/menu.js";
 import { 
   USER_INPUT,
   ERROR_MESSAGE,
@@ -9,7 +10,7 @@ import {
 } from "../constants/constants.js";
 
 import InputView from "../view/InputView.js";
-import { MENU } from "../constants/menu.js";
+import OutputView from "../view/OutputView.js";
 
 class Menu {
   #menu;
@@ -70,6 +71,10 @@ class Menu {
     if (sum > MAX_MENU) {
       throw ERROR_MESSAGE.MENU;
     }
+  }
+
+  printMenu() {
+    OutputView.printMenu(this.#menu);
   }
 }
 

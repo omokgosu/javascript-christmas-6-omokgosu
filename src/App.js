@@ -5,6 +5,9 @@ class App {
   async run() {
     const day = await this.createDay();
     const menu = await this.createMenu();
+
+    day.printPreview();
+    menu.printMenu();
   }
 
   async createDay() {

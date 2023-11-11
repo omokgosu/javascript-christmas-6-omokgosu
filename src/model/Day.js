@@ -7,6 +7,7 @@ import {
 } from "../constants/constants.js";
 
 import InputView from "../view/InputView.js";
+import OutputView from "../view/OutputView.js";
 
 class Day {
   #day;
@@ -37,6 +38,10 @@ class Day {
     if (isNaN(day)) {
       throw ERROR_MESSAGE.DAY;
     }
+  }
+
+  printPreview() {
+    OutputView.printPreview(this.#day);
   }
 }
 
