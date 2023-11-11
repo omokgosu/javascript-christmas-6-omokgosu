@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import { MESSAGE , COUNT } from "../constants/constants.js";
+import { MESSAGE , COUNT, PRICE } from "../constants/constants.js";
 
 const OutputView = {
     printPreview: (day) => {
@@ -11,6 +11,9 @@ const OutputView = {
             const [ name , count ] = menu;
             Console.print(`${name} ${COUNT(count)}`)
         })
+    },
+    printTotalPrice(price) {
+        Console.print(PRICE(price.toLocaleString()))
     }
     // ...
 }

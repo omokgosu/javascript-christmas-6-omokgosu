@@ -76,6 +76,21 @@ class Menu {
   printMenu() {
     OutputView.printMenu(this.#menu);
   }
+
+  printTotalPrice() { 
+    OutputView.printTotalPrice(this.calcTotalPrice());
+  }
+
+  calcTotalPrice() {
+    let total = 0;
+
+    this.#menu.forEach((menu) => {
+      const [ name , count ] = menu;
+      total += MENU[name].price * count;
+    })
+
+    return total;
+  }
 }
 
 export default Menu;

@@ -8,6 +8,7 @@ class App {
 
     day.printPreview();
     menu.printMenu();
+    menu.printTotalPrice();
   }
 
   async createDay() {
