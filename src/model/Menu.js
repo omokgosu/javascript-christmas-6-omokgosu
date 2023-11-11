@@ -44,9 +44,6 @@ class Menu {
     const name = menu.map((menu) => menu[0]);
     const count = menu.map((menu) => menu[1]);
 
-    Console.print(name);
-    Console.print(count);
-    
     this.#menuNameValidate(name);
     this.#menuCountValidate(count);
   }

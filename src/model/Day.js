@@ -1,26 +1,41 @@
 import { Console } from "@woowacourse/mission-utils";
-import { USER_INPUT } from "../constants/constants.js";
+import { 
+  USER_INPUT,
+  START_EVENT_DAY,
+  END_EVENT_DAY,
+  ERROR_MESSAGE
+} from "../constants/constants.js";
 
 import InputView from "../view/InputView.js";
-import Validate from "../validate/Validate.js";
 
 class Day {
   #day;
 
   constructor() {
-    this.#day = this.#setDay();
+  
   }
 
-  async #setDay() {
+  async setDay() {
     while(!this.#day){
       const day = await InputView.getInputDay(USER_INPUT.DAY);
 
       try {
-        Validate.dayValidate(day);
+        this.#dayValidate(day);
         this.#day = day;
       } catch(error) {
         Console.print(error);
+        this.#day = null;
       }
+    }
+  }
+
+  #dayValidate(day) {
+    if (day < START_EVENT_DAY || day > END_EVENT_DAY) {
+      throw ERROR_MESSAGE.DAY;
+    }
+
+    if (isNaN(day)) {
+      throw ERROR_MESSAGE.DAY;
     }
   }
 }
