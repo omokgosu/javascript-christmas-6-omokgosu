@@ -60,6 +60,20 @@ const OutputView = {
         }
 
         return Console.print(`-${PRICE(benefitsPrice.toLocaleString())}`);
+    },
+    printSalePrice(totalPrice , benefits) {
+        Console.print(MESSAGE.SALE_PRICE);
+        let benefitsPrice = 0;
+
+        for (const key in benefits) {
+            if (key === 'PRESENT') {
+                continue;
+            }
+            
+            benefitsPrice += benefits[key];
+        }
+
+        return Console.print(PRICE((totalPrice - benefitsPrice).toLocaleString()));
     }
 }
 

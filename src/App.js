@@ -39,6 +39,7 @@ class App {
     OutputView.printServiceMenu(totalPrice);
     OutputView.printBenefits(this.#benefits);
     OutputView.printBenefitsPrice(this.#benefits);
+    OutputView.printSalePrice(totalPrice , this.#benefits);
   }
 
   async createDay() {
