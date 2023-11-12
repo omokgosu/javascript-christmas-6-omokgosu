@@ -1,5 +1,11 @@
 import { Console } from '@woowacourse/mission-utils';
-import { MESSAGE , COUNT, PRICE } from "../constants/constants.js";
+import { 
+    MESSAGE,
+    COUNT,
+    PRICE,
+    SERVICE_MENU,
+    SERVICE_PRICE
+} from "../constants/constants.js";
 
 const OutputView = {
     printPreview: (day) => {
@@ -13,7 +19,18 @@ const OutputView = {
         })
     },
     printTotalPrice(price) {
+        Console.print(MESSAGE.TOTAL_PRICE);
         Console.print(PRICE(price.toLocaleString()))
+    },
+    printServiceMenu(price) {
+        let service = MESSAGE.NO;
+
+        if (price > SERVICE_PRICE) {
+            service = SERVICE_MENU;
+        }
+
+        Console.print(MESSAGE.SERVICE_MENU);
+        Console.print(service);
     }
     // ...
 }

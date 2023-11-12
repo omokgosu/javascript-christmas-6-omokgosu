@@ -12,6 +12,7 @@ export const MESSAGE = {
   BENEFITS_PRCIE: '\n<총혜택 금액>',
   SALE_PRICE: '\n<할인 후 예상 결제 금액>',
   BADGE: '\n<12월 이벤트 뱃지>',
+  NO: '없음'
 }
 
 export const ERROR_MESSAGE = {
@@ -37,6 +38,7 @@ export const PRICE = (price) => `${price}원`;
 export const DAY = (day) => `2023-12-${day}`;
 export const HIGHPOON = '-';
 export const COMMA = ',';
+export const SERVICE_MENU = `샴페인 1개`;
 
 export const EVENT_PRICE = 10000;
 export const SERVICE_PRICE = 120000;

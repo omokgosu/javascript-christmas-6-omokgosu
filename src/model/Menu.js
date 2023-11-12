@@ -81,6 +81,10 @@ class Menu {
     OutputView.printTotalPrice(this.calcTotalPrice());
   }
 
+  printServiceMenu() {
+    OutputView.printServiceMenu(this.calcTotalPrice());
+  }
+
   calcTotalPrice() {
     let total = 0;
 
