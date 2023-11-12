@@ -10,13 +10,16 @@ import {
 } from "../constants/constants.js";
 
 import InputView from "../view/InputView.js";
-import OutputView from "../view/OutputView.js";
 
 class Menu {
   #menu;
 
   constructor() {
   
+  }
+
+  getMenu() {
+    return this.#menu;
   }
 
   async setMenu() {
@@ -71,18 +74,6 @@ class Menu {
     if (sum > MAX_MENU) {
       throw ERROR_MESSAGE.MENU;
     }
-  }
-
-  printMenu() {
-    OutputView.printMenu(this.#menu);
-  }
-
-  printTotalPrice() { 
-    OutputView.printTotalPrice(this.calcTotalPrice());
-  }
-
-  printServiceMenu() {
-    OutputView.printServiceMenu(this.calcTotalPrice());
   }
 
   calcTotalPrice() {
