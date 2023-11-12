@@ -45,8 +45,22 @@ const OutputView = {
             const price = benefits[key].toLocaleString();
             Console.print(`${DETAILS[key]}${PRICE(price)}`)
         }
+    },
+    printBenefitsPrice(benefits) {
+        Console.print(MESSAGE.BENEFITS_PRCIE);
+        
+        if (Object.keys(benefits).legnth === ZERO) {
+            return Console.print(PRICE(ZERO));
+        }
+
+        let benefitsPrice = 0;
+
+        for (const key in benefits) {
+            benefitsPrice += benefits[key];
+        }
+
+        return Console.print(`-${PRICE(benefitsPrice.toLocaleString())}`);
     }
-    // ...
 }
 
 export default OutputView;
