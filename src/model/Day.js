@@ -3,7 +3,9 @@ import {
   USER_INPUT,
   START_EVENT_DAY,
   END_EVENT_DAY,
-  ERROR_MESSAGE
+  ERROR_MESSAGE,
+  DAY,
+  WEEKEND
 } from "../constants/constants.js";
 
 import InputView from "../view/InputView.js";
@@ -41,6 +43,11 @@ class Day {
     if (isNaN(day)) {
       throw ERROR_MESSAGE.DAY;
     }
+  }
+
+  getDayType() {
+    const currentDay = new Date(DAY(this.#day)).getDay();
+    return WEEKEND.includes(currentDay) ? 'WEEKEND' : 'WEEKDAY';
   }
 }
 

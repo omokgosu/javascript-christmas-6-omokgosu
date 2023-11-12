@@ -4,7 +4,9 @@ import {
     COUNT,
     PRICE,
     SERVICE_MENU,
-    SERVICE_PRICE
+    SERVICE_PRICE,
+    ZERO,
+    DETAILS
 } from "../constants/constants.js";
 
 const OutputView = {
@@ -31,6 +33,18 @@ const OutputView = {
 
         Console.print(MESSAGE.SERVICE_MENU);
         Console.print(service);
+    },
+    printBenefits(benefits) {
+        Console.print(MESSAGE.BENEFITS_DETAILS);
+
+        if (Object.keys(benefits).length === ZERO) {
+            return Console.print(MESSAGE.NO);
+        }
+
+        for (const key in benefits) {
+            const price = benefits[key].toLocaleString();
+            Console.print(`${DETAILS[key]}${PRICE(price)}`)
+        }
     }
     // ...
 }

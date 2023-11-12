@@ -20,9 +20,10 @@ export const ERROR_MESSAGE = {
   MENU: '[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.',
 }
 
-export const DEATILS = {
+export const DETAILS = {
   D_DAY: `크리스마스 디데이 할인: -`,
   WEEKDAY: `평일 할인: -`,
+  WEEKEND: '주말 할인 : -',
   SPECIAL: `특별 할인: -`,
   PRESENT: `증정 이벤트: -`,
 }
@@ -40,6 +41,8 @@ export const HIGHPOON = '-';
 export const COMMA = ',';
 export const SERVICE_MENU = `샴페인 1개`;
 
+export const DAY_PRICE = 100;
+export const D_DAY_EVENT_PRICE = 1000;
 export const EVENT_PRICE = 10000;
 export const SERVICE_PRICE = 120000;
 export const MAX_MENU = 20;
@@ -49,3 +52,4 @@ export const END_D_DAY_EVENT_DAY = 25;
 export const END_EVENT_DAY = 31;
 
 export const WEEKEND = [5,6];
+export const STAR_DAY = [3,10,17,24,25,31];
