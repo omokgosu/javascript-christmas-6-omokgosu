@@ -6,7 +6,8 @@ import {
     SERVICE_MENU,
     SERVICE_PRICE,
     ZERO,
-    DETAILS
+    DETAILS,
+    BADGE
 } from "../constants/constants.js";
 
 const OutputView = {
@@ -74,6 +75,19 @@ const OutputView = {
         }
 
         return Console.print(PRICE((totalPrice - benefitsPrice).toLocaleString()));
+    },
+    printBadge(benefits) {
+        Console.print(MESSAGE.BADGE);
+        let benefitsPrice = 0;
+
+        for (const key in benefits) {
+            benefitsPrice += benefits[key];
+        }
+
+        if (benefitsPrice > 20000) return Console.print(BADGE.SANTA);
+        if (benefitsPrice > 10000) return Console.print(BADGE.TREE);
+        if (benefitsPrice > 5000) return Console.print(BADGE.STAR);
+        return Console.print(MESSAGE.NO);
     }
 }
 

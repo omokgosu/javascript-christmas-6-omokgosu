@@ -40,6 +40,7 @@ class App {
     OutputView.printBenefits(this.#benefits);
     OutputView.printBenefitsPrice(this.#benefits);
     OutputView.printSalePrice(totalPrice , this.#benefits);
+    OutputView.printBadge(this.#benefits);
   }
 
   async createDay() {
