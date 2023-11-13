@@ -13,10 +13,6 @@ import InputView from "../view/InputView.js";
 class Day {
   #day;
 
-  constructor() {
-  
-  }
-
   getDay() {
     return this.#day;
   }

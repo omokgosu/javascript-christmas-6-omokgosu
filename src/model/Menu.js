@@ -14,10 +14,6 @@ import InputView from "../view/InputView.js";
 class Menu {
   #menu;
 
-  constructor() {
-  
-  }
-
   getMenu() {
     return this.#menu;
   }
