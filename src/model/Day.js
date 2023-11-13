@@ -41,8 +41,8 @@ class Day {
     }
   }
 
-  getDayType() {
-    const currentDay = new Date(DAY(this.#day)).getDay();
+  getDayType(day) {
+    const currentDay = new Date(DAY(day)).getDay();
     return WEEKEND.includes(currentDay) ? 'WEEKEND' : 'WEEKDAY';
   }
 }

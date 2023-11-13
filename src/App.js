@@ -25,7 +25,7 @@ class App {
 
     const inputDay = day.getDay();
     const inputMenu = menu.getMenu();
-    const dayType = day.getDayType();
+    const dayType = day.getDayType(inputDay);
     const totalPrice = menu.calcTotalPrice();
     
     this.setDdaySale(inputDay);
