@@ -44,16 +44,24 @@ class Menu {
     const name = menu.map((menu) => menu[0]);
     const count = menu.map((menu) => menu[1]);
 
-    this.#menuNameValidate(name);
     this.#menuCountValidate(count);
+    this.#menuNameValidate(name);
   }
 
   #menuNameValidate(name) {
+    if (name.length !== new Set(name).size) {
+      throw ERROR_MESSAGE.MENU;
+    }
+    
     name.forEach((name) => {
       if (!(name in MENU)) {
         throw ERROR_MESSAGE.MENU;
       }
     })
+    
+    if (!(name.some((menu) => MENU[menu].type !== '음료'))) {
+      throw ERROR_MESSAGE.MENU_DRINK;
+    }
   }
 
   #menuCountValidate(count) {
@@ -68,14 +76,14 @@ class Menu {
     })
 
     if (sum > MAX_MENU) {
-      throw ERROR_MESSAGE.MENU;
+      throw ERROR_MESSAGE.MENU_OVER;
     }
   }
 
-  calcTotalPrice() {
+  calcTotalPrice(menu) {
     let total = 0;
 
-    this.#menu.forEach((menu) => {
+    menu.forEach((menu) => {
       const [ name , count ] = menu;
       total += MENU[name].price * count;
     })
