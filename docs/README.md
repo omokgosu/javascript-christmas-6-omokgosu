@@ -14,13 +14,16 @@
 
 :white_check_mark: 주문 메뉴 입력기능  
 &emsp;:white_check_mark: 메뉴를 메뉴이름과 갯수를 입력한다.  
+&emsp;&emsp;:heavy_exclamation_mark: 음료만 주문시 주문할 수 없다.  
 &emsp;:white_check_mark: 메뉴와 갯수는 '-' 로 구분한다.  ( e.g. 시저샐러드-1 )  
 &emsp;&emsp;:heavy_exclamation_mark: 메뉴판에 없는 메뉴이름인 경우 예외처리 한다.  
 &emsp;&emsp;:heavy_exclamation_mark: 메뉴의 갯수가 1 이상의 숫자가 아닌 경우 예외처리 한다.  
+&emsp;&emsp;:heavy_exclamation_mark: 메뉴의 갯수가 20개 초과인 경우 예외처리한다.  
 &emsp;:white_check_mark: 메뉴와 메뉴는 ','로 구분한다. ( e.g. 시저샐러드-1,콜라-1 )  
 &emsp;&emsp;:heavy_exclamation_mark: 중복된 메뉴가 입력된 경우 예외처리 한다. 
 
 :white_check_mark: 할인 전 총 주문 금액 출력기능  
+&emsp;:white_check_mark: 10,000원 이하일 시 이벤트 미적용 안내문구를 출력한다.
 
 :white_check_mark: 증정 메뉴 출력기능
 
