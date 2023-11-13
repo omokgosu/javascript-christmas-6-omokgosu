@@ -4,7 +4,8 @@ import {
   D_DAY_EVENT_PRICE,
   DAY_PRICE, 
   SERVICE_PRICE,
-  STAR_DAY
+  STAR_DAY,
+  EVENT_PRICE
 } from "./constants/constants.js";
 import { MENU } from "./constants/menu.js";
 
@@ -28,10 +29,9 @@ class App {
     const dayType = day.getDayType(inputDay);
     const totalPrice = menu.calcTotalPrice(inputMenu);
     
-    this.setDdaySale(inputDay);
-    this.setDayTypeSale(dayType , inputMenu);
-    this.setSpecialSale(inputDay);
-    this.setServiceMenuSale(totalPrice);
+    if (totalPrice > EVENT_PRICE) {
+      this.setEventInfo(inputDay , dayType , inputMenu , totalPrice);
+    }
     
     OutputView.printPreview(inputDay);
     OutputView.printMenu(inputMenu);
@@ -53,6 +53,13 @@ class App {
     const menu = new Menu();
     await menu.setMenu();
     return menu;
+  }
+
+  setEventInfo(day , dayType , menu , totalPrice) {
+    this.setDdaySale(day);
+    this.setDayTypeSale(dayType,menu);
+    this.setSpecialSale(day);
+    this.setServiceMenuSale(totalPrice);
   }
 
   setDdaySale(day) {
