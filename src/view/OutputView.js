@@ -57,10 +57,10 @@ const OutputView = {
     let benefitsPrice = 0;
 
     for (const key in benefits) {
-        benefitsPrice += benefits[key];
+        benefitsPrice -= benefits[key];
     }
 
-    Console.print(`-${PRICE(benefitsPrice.toLocaleString())}`);
+    Console.print(PRICE(benefitsPrice.toLocaleString()));
   },
   printSalePrice(totalPrice , benefits) {
     Console.print(MESSAGE.SALE_PRICE);
