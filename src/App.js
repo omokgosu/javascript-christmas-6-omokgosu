@@ -5,7 +5,8 @@ import {
   DAY_PRICE, 
   SERVICE_PRICE,
   STAR_DAY,
-  EVENT_PRICE
+  EVENT_PRICE,
+  SALE_PRICE
 } from "./constants/constants.js";
 import { MENU } from "./constants/menu.js";
 
@@ -93,7 +94,7 @@ class App {
       const [ name , count ] = menu;
 
       if (MENU[name].type === '디저트') {
-        salePrice += 2023 * count;
+        salePrice += SALE_PRICE * count;
       }
     })
 
@@ -109,7 +110,7 @@ class App {
       const [ name , count ] = menu;
 
       if (MENU[name].type === '메인') {
-        salePrice += 2023 * count;
+        salePrice += SALE_PRICE * count;
       }
     })
 

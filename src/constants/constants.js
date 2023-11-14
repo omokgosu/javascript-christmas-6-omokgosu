@@ -45,6 +45,7 @@ export const SERVICE_MENU = `샴페인 1개`;
 
 export const DAY_PRICE = 100;
 export const D_DAY_EVENT_PRICE = 1000;
+export const SALE_PRICE = 2023;
 export const EVENT_PRICE = 10000;
 export const SERVICE_PRICE = 120000;
 export const MAX_MENU = 20;
