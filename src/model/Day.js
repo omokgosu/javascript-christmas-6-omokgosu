@@ -36,7 +36,7 @@ class Day {
       throw ERROR_MESSAGE.DAY;
     }
 
-    if (isNaN(day)) {
+    if (Number.isNaN(day)) {
       throw ERROR_MESSAGE.DAY;
     }
   }
